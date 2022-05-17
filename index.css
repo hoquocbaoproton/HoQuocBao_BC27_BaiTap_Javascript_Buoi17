@@ -1,0 +1,81 @@
+:root {
+  --radius: 8px;
+}
+.container {
+  max-width: 1200px;
+}
+h6,
+p {
+  margin: 0;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.btn {
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  outline: none;
+  -webkit-appearance: none;
+}
+.btn:active {
+  transform: scale(90%);
+  -webkit-appearance: none;
+}
+.btn:focus {
+  outline: none;
+}
+
+.side-bar {
+  border: 1px solid #999;
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.side-bar .feature__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-bar .feature__title > div {
+  border: 1px solid #999;
+  padding: 8px;
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.side-bar .feature__title .find .find-options {
+  border: none;
+}
+
+.side-bar .feature__title .swap-input {
+  border: none;
+  padding: 0;
+}
+
+.side-bar .index_input {
+  margin: 0 8px;
+  width: 50%;
+}
+
+.board .input-container input {
+  padding: 8px 16px;
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid #999;
+}
+
+.board .input-container .input-btn {
+  min-width: 100%;
+
+  padding: 8px 16px;
+}
+
+.board .output-container .input-data,
+.board .output-container .output-export {
+  padding: 32px 16px;
+  border: none;
+  border-radius: var(--radius);
+  background-color: antiquewhite;
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>js-17-Array</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./index.css" />
+    <script defer src="./src/model.js"></script>
+  </head>
+  <body>
+    <section id="exercise">
+      <div class="container">
+        <div class="row mt-5">
+          <div class="col-4">
+            <div class="side-bar">
+              <div class="row">
+                <div class="features-wrapper">
+                  <div class="row find-features mb-4">
+                    <div class="col-8 feature__title">
+                      <div class="find">
+                        <select
+                          class="w-100 find-options"
+                          name=""
+                          id="findFeatures"
+                        >
+                          <option class="w-100" value="">
+                            Lựa chọn tìm kiếm
+                          </option>
+                          <option class="w-100" value="smallest">
+                            Tìm số nhỏ nhất
+                          </option>
+                          <option class="w-100" value="smallestPos">
+                            Tìm số dương nhỏ nhất
+                          </option>
+                          <option class="w-100" value="lastEvenNum">
+                            Tìm số chẵn cuối cùng
+                          </option>
+                          <option class="w-100" value="firstPrimeNum">
+                            Tìm số nguyên tố đầu tiên
+                          </option>
+                          <option class="w-100" value="howManyInt">
+                            Tìm số nguyên trong mảng số thực
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-4 feature__btn">
+                      <button
+                        class="btn btn-outline-primary text-center"
+                        id="findBtn"
+                      >
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row operator-features mb-4">
+                    <div class="col-8 feature__title">
+                      <div class="operator">
+                        <h6>Tổng các số dương</h6>
+                      </div>
+                    </div>
+                    <div class="col-4 feature__btn">
+                      <button
+                        class="btn btn-outline-primary text-center"
+                        id="sumPosInt"
+                      >
+                        <i class="fa-solid fa-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row sort-features mb-4">
+                    <div class="col-8 feature__title">
+                      <div class="sort">
+                        <h6>Sắp xếp tăng dần</h6>
+                      </div>
+                    </div>
+                    <div class="col-4 feature__btn">
+                      <button
+                        class="btn btn-outline-primary text-center"
+                        id="sortBtn"
+                      >
+                        <i class="fa-solid fa-sort"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row count-features mb-4">
+                    <div class="col-8 feature__title">
+                      <div class="count">
+                        <h6>Đếm số dương</h6>
+                      </div>
+                    </div>
+                    <div class="col-4 feature__btn">
+                      <button
+                        class="btn btn-outline-primary text-center"
+                        id="countInt"
+                      >
+                        <i class="fa-solid fa-calculator"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row compare-features mb-4">
+                    <div class="col-8 feature__title">
+                      <div class="count">
+                        <h6>So sánh lượng dương/âm</h6>
+                      </div>
+                    </div>
+                    <div class="col-4 feature__btn">
+                      <button
+                        class="btn btn-outline-primary text-center"
+                        id="compareBtn"
+                      >
+                        <i
+                          class="fa-solid fa-down-left-and-up-right-to-center"
+                        ></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row swap-features">
+                    <div class="col-8 feature__title">
+                      <div class="swap mb-3">
+                        <h6>Hoán đổi vị trí</h6>
+                      </div>
+                      <div class="swap-input d-flex flex-row">
+                        <input
+                          type="number"
+                          placeholder="position 1"
+                          class="posi1 index_input"
+                        />
+                        <input
+                          type="number index_input"
+                          placeholder="position 2"
+                          class="posi2 index_input"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-4 feature__btn">
+                      <button
+                        class="btn btn-outline-primary text-center align-self-start"
+                        id="swapBtn"
+                      >
+                        <i class="fa-solid fa-retweet"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-8">
+            <div class="board">
+              <div class="input-container">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="mb-4">
+                      <input
+                        type="number"
+                        placeholder="Nhập số nguyên"
+                        id="inputIntNum"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <button
+                      type="button"
+                      class="btn btn-primary input-btn inputInt-btn"
+                    >
+                      Nhập số nguyên
+                    </button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <div class="mb-4">
+                      <input
+                        type="number"
+                        placeholder="Nhập số thực"
+                        id="inputRealNum"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <button
+                      type="button"
+                      class="btn btn-primary input-btn inputReal-btn"
+                    >
+                      Nhập số thực
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="output-container">
+                <div class="row">
+                  <div class="col-6">
+                    <div class="input-data" id="inputDataView">
+                      <p class="intNum"></p>
+                      <p class="realNum"></p>
+                      <p class="sumNums"></p>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="output-export" id="exportDataView"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
